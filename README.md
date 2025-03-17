@@ -1,7 +1,3 @@
-Here’s a **comprehensive `README.md`** for your **Lost Document Recovery App**:  
-
----
-
 # **Lost Document Recovery App**  
 
 ## 📌 **Introduction**  
