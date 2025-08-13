@@ -1,35 +1,35 @@
-📂 Lost Documents App — Backend
-📌 Overview
-The Lost Documents App Backend is built using Node.js, Express, and MongoDB.
+
+
+# 📂 Lost Documents App — Backend
+
+## 📌 Overview
+
+The **Lost Documents App Backend** is built using **Node.js, Express, and MongoDB**.
 It provides a secure API for:
 
-User authentication (register, login)
+* User authentication (register, login)
+* Reporting lost or found documents
+* Searching documents based on criteria
 
-Reporting lost or found documents
+The backend uses **JWT** for authentication and **bcrypt** for password hashing to ensure security.
 
-Searching documents based on criteria
+---
 
-The backend uses JWT for authentication and bcrypt for password hashing to ensure security.
+## ⚙️ Tech Stack
 
-⚙️ Tech Stack
-Runtime: Node.js (v22+)
+* **Runtime:** Node.js (v22+)
+* **Framework:** Express.js
+* **Database:** MongoDB (Mongoose ODM)
+* **Authentication:** JWT (JSON Web Tokens)
+* **Security:** bcrypt for password hashing
+* **File Upload:** Multer (if image storage is needed)
+* **Environment Variables:** dotenv
 
-Framework: Express.js
+---
 
-Database: MongoDB (Mongoose ODM)
+## 📁 Folder Structure
 
-Authentication: JWT (JSON Web Tokens)
-
-Security: bcrypt for password hashing
-
-File Upload: Multer (if image storage is needed)
-
-Environment Variables: dotenv
-
-📁 Folder Structure
-bash
-Copy
-Edit
+```
 backend/
 ├── config/
 │   └── db.js                  # Database connection setup
@@ -49,69 +49,89 @@ backend/
 ├── .env                        # Environment variables
 ├── package.json                # Backend dependencies
 └── README.md                   # Backend documentation
-🔑 Environment Variables (.env)
-Create a .env file in the backend/ folder:
+```
 
-ini
-Copy
-Edit
+---
+
+## 🔑 Environment Variables (`.env`)
+
+Create a `.env` file in the `backend/` folder:
+
+```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-🚀 Installation & Setup
-1️⃣ Clone the repository
+```
 
-bash
-Copy
-Edit
+---
+
+## 🚀 Installation & Setup
+
+1️⃣ **Clone the repository**
+
+```bash
 git clone https://github.com/yourusername/lost-documents-app.git
 cd lost-documents-app/backend
-2️⃣ Install dependencies
+```
 
-bash
-Copy
-Edit
+2️⃣ **Install dependencies**
+
+```bash
 npm install
-3️⃣ Setup environment variables
-Create a .env file as shown above.
+```
 
-4️⃣ Run the backend server
+3️⃣ **Setup environment variables**
+Create a `.env` file as shown above.
 
-bash
-Copy
-Edit
+4️⃣ **Run the backend server**
+
+```bash
 npm run dev   # for development (nodemon)
 npm start     # for production
-📡 API Endpoints
-Auth Routes (/api/auth)
-Method	Endpoint	Description	Auth Required
-POST	/register	Register new user	❌
-POST	/login	Login user & get JWT	❌
+```
 
-Document Routes (/api/documents)
-Method	Endpoint	Description	Auth Required
-POST	/report	Report lost/found document	✅
-GET	/search	Search documents	✅
+---
 
-🔒 Security Measures
-Password Hashing: Uses bcrypt to hash passwords before saving to DB.
+## 📡 API Endpoints
 
-JWT Authentication: Each logged-in user gets a token to access protected routes.
+### **Auth Routes** (`/api/auth`)
 
-Input Validation: Ensures proper data format before processing.
+| Method | Endpoint    | Description          | Auth Required |
+| ------ | ----------- | -------------------- | ------------- |
+| POST   | `/register` | Register new user    | ❌             |
+| POST   | `/login`    | Login user & get JWT | ❌             |
 
-🛠 Scripts
-bash
-Copy
-Edit
+### **Document Routes** (`/api/documents`)
+
+| Method | Endpoint  | Description                | Auth Required |
+| ------ | --------- | -------------------------- | ------------- |
+| POST   | `/report` | Report lost/found document | ✅             |
+| GET    | `/search` | Search documents           | ✅             |
+
+---
+
+## 🔒 Security Measures
+
+* **Password Hashing:** Uses bcrypt to hash passwords before saving to DB.
+* **JWT Authentication:** Each logged-in user gets a token to access protected routes.
+* **Input Validation:** Ensures proper data format before processing.
+
+---
+
+## 🛠 Scripts
+
+```bash
 npm run dev   # Run with nodemon (auto-restart on changes)
 npm start     # Run in production mode
-📬 Example API Request
-Register User
+```
 
-bash
-Copy
-Edit
+---
+
+## 📬 Example API Request
+
+**Register User**
+
+```bash
 POST /api/auth/register
 Content-Type: application/json
 
@@ -120,12 +140,16 @@ Content-Type: application/json
   "email": "john@example.com",
   "password": "mypassword"
 }
-Response
+```
 
-json
-Copy
-Edit
+**Response**
+
+```json
 {
   "message": "User registered successfully"
 }
+```
+
+---
+
 
